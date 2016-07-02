@@ -1,0 +1,32 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-header-bar class="bar-stable">
+            <div class="title">Menu</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list id="menu-list1" class=" ">
+                <ion-item class="item-icon-right  " id="menu-list-item1" ui-sref="menu.promoEs" menu-close="">Promoções ao redor
+                    <i class="icon ion-android-globe icon-accessory"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="menu-list-item4" ui-sref="menu.cadastrarProduto" menu-close="">Cadastrar Produtos
+                    <i class="icon ion-android-add icon-accessory"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="menu-list-item5" ui-sref="menu.configuraEs" menu-close="">Configurações
+                    <i class="icon ion-android-settings icon-accessory"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  " id="menu-list-item13" ui-sref="menu.configuraEs" menu-close="">Sair
+                    <i class="icon ion-android-exit icon-accessory"></i>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
