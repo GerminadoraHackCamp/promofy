@@ -5,7 +5,8 @@
                                          'promofy.controllers.offer',
                                          'promofy.controllers.places',
                                          'promofy.services.offer',
-                                         'firebase'
+                                         'firebase',
+                                         'ngCordova'
                                         ]);
 
     app.config(function($stateProvider, $urlRouterProvider) {
