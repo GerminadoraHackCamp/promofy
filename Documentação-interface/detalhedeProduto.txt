@@ -1,0 +1,28 @@
+Detalhe de produto
+http://ionicframework.com/docs/v2/components/#badges
+
+<ion-item>
+  <ion-icon name="logo-twitter" item-left></ion-icon>
+  Followers
+  <ion-badge item-right>260k</ion-badge>
+</ion-item>
+
+Card de produto
+http://ionicframework.com/docs/v2/components/#card-image
+<ion-card>
+  <img src="img/nin-live.png"/>
+  <ion-card-content>
+    <ion-card-title>
+      Nine Inch Nails Live
+      </ion-card-title>
+    <p>
+      The most popular industrial group ever, and largely
+      responsible for bringing the music to a mass audience.
+    </p>
+  </ion-card-content>
+</ion-card>
+
+
+Imagem de produto
+Seguidores na plataforma
+Preco medio
