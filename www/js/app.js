@@ -5,6 +5,8 @@
                                          'promofy.controllers.offer',
                                          'promofy.controllers.places',
                                          'promofy.services.offer',
+                                         'promofy.services.places',
+                                         'ngCordova',
                                          'firebase'
                                         ]);
 
