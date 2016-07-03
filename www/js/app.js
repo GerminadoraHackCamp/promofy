@@ -3,6 +3,7 @@
     
     var app = angular.module('promofy', ['ionic',
                                          'promofy.controllers.offer',
+                                         'promofy.controllers.places',
                                          'promofy.services.offer',
                                          'firebase'
                                         ]);
@@ -21,6 +22,26 @@
           'tab-offer': {
             templateUrl: 'templates/tab-offer.html',
             controller: 'OfferController'
+          }
+        }
+      });
+
+      $stateProvider.state('tab.include', {
+        url: '/include',
+        views: {
+          'tab-include': {
+            templateUrl: 'templates/tab-include.html',
+            controller: 'OfferController'
+          }
+        }
+      });
+
+      $stateProvider.state('tab.places', {
+        url: '/places',
+        views: {
+          'tab-places': {
+            templateUrl: 'templates/tab-places.html',
+            controller: 'PlacesController'
           }
         }
       });
