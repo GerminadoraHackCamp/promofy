@@ -9,7 +9,8 @@
             load: function () {
                 var deferred = $q.defer();
                 var offersRef = new Firebase("https://promofyapp.firebaseio.com/offers");
-                deferred.resolve($firebaseArray(offersRef));
+                var fireArray = $firebaseArray(offersRef.orderByChild("timestamp").limitToLast(20)); 
+                deferred.resolve(fireArray);
                 return deferred.promise;
             }
 

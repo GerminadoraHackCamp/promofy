@@ -1,7 +1,7 @@
 <ion-view view-title="Promofy">
   <ion-content class="padding">
     <ion-list>
-      <ion-item class="card" ng-repeat="offer in offers">
+      <ion-item class="card" ng-repeat="offer in offers | orderObjectBy:'timestamp':true"">
          <div class="item">
             <h2>{{offer.name}}</h2>
             <p>{{offer.place.name}}</p>
