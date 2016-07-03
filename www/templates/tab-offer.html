@@ -1,0 +1,18 @@
+<ion-view view-title="Promofy">
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item class="card" ng-repeat="offer in offers">
+         <div class="item">
+            <h2>{{offer.name}}</h2>
+            <p>{{offer.place.name}}</p>
+         </div>
+         <div class="item item-body">
+            <img src="data:image/jpeg;base64,{{offer.image}}" class="img-responsive center">
+            <p>
+              <strong>{{offer.price}}</strong>
+            </p>
+          </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
