@@ -17,21 +17,19 @@
                 }
 
                 ionic.Platform.ready(function (){
-                     var options = {timeout: 10000, enableHighAccuracy: true};
-                    $cordovaGeolocation.getCurrentPosition(options)
-                    .then(function(position){
-                       var geolocation = {
+                    var options = {timeout: 10000, enableHighAccuracy: true};
+                    $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+                        var geolocation = {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude
                        };
                        var service = new google.maps.places.PlacesService(map);
                        service.nearbySearch({
-                        location: geolocation,
-                        radius: 500,
-                        type: ['grocery_or_supermarket']
-                    }, nearByCallback);
+                            location: geolocation,
+                            radius: 500,
+                            type: ['grocery_or_supermarket']
+                        }, nearByCallback);
                     })
-
                 });
 
                 return deferred.promise;

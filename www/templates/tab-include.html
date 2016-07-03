@@ -6,16 +6,16 @@
         <div class="col"></div>
       </div>
       <label class="item item-input item-button-right">
-        <button class="button button-outline button-royal" ng-click="modal.show()">
+        <button class="button button-outline button-royal" ng-show="$scope.showButtonPlace" ng-click="modal.show()">
           <i class="icon ion-ios-location"></i>
         </button>
-        <input type="text" placeholder="Estabelecimento" ng-model="offer.place.name">
+        <input type="text" placeholder="Estabelecimento" ng-model="offer.place.name" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Nome do produto" ng-model="offer.name">
+        <input type="text" placeholder="Nome do produto" ng-model="offer.name" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Preço" ng-model="offer.price">
+        <input type="text" placeholder="Preço" ng-model="offer.price" required>
       </label>
     </div>
     <button class="button button-block button-royal button-outline icon-right ion-camera" ng-click="takePicture()">

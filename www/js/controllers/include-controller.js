@@ -37,19 +37,26 @@
             }
         };
 
-        OfferService.load().then(function(result) {
-            $scope.offers = result;
-        })
-
         $ionicModal.fromTemplateUrl('templates/places-modal.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.modal = modal;
+            loadData();
+        });
+
+        function loadData() {
             PlacesService.load().then(function(results){
                 $scope.places = results;
             }) 
-        });
+            .finally(function() {
+                $scope.$broadcast('scroll.refreshComplete');
+            });
+        } 
 
+        $scope.doRefresh = function() {
+            loadData();
+        };
+        
         $scope.savePlace = function(place) {
             $scope.offer.place.name = place.name;
             $scope.offer.place.location.lat = place.geometry.location.lat();
@@ -95,8 +102,26 @@
 
         $scope.submitOffer = function (offer) {
 
+            if (offer.price <= 0) {
+                var alert = $ionicPopup.alert({
+                    title: 'Erro',
+                    template: 'Preencha os campos!'
+                });
+                return false;
+            }
+
+            if (offer.name == "") {
+                var alert = $ionicPopup.alert({
+                    title: 'Erro',
+                    template: 'Preencha os campos!'
+                });
+                return false;
+            }
+
             offer.image = PictureService.get();
-            $scope.offers.$add(offer);
+            
+            OfferService.add(offer);
+           
             PictureService.reset();
             $scope.hasPictureValue = false;
             $scope.pictureValue = "";

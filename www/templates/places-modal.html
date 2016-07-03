@@ -13,6 +13,7 @@
   </ion-header-bar>
   <ion-content> 
   <div id="map" data-tap-disabled="true"></div> 
+  <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
       <ion-list>
         <ion-item ng-repeat="place in places | filter:filter" ng-click="savePlace(place)">
           {{place.name}}
