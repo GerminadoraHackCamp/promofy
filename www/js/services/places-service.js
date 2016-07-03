@@ -12,10 +12,6 @@
 
                 function nearByCallback(results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
-                        
-                        for (var i = 0; i < results.length; i++) {
-                            console.log(results[i]);
-                        }
                         deferred.resolve(results);
                     }
                 }
@@ -24,7 +20,6 @@
                      var options = {timeout: 10000, enableHighAccuracy: true};
                     $cordovaGeolocation.getCurrentPosition(options)
                     .then(function(position){
-                       console.log(position);
                        var geolocation = {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude
@@ -35,9 +30,6 @@
                         radius: 500,
                         type: ['grocery_or_supermarket']
                     }, nearByCallback);
-
-                    
-                       
                     })
 
                 });

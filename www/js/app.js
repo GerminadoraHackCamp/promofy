@@ -3,9 +3,10 @@
     
     var app = angular.module('promofy', ['ionic',
                                          'promofy.controllers.offer',
-                                         'promofy.controllers.places',
+                                         'promofy.controllers.include',
                                          'promofy.services.offer',
                                          'promofy.services.places',
+                                         'promofy.services.picture',
                                          'ngCordova',
                                          'firebase'
                                         ]);
@@ -33,17 +34,7 @@
         views: {
           'tab-include': {
             templateUrl: 'templates/tab-include.html',
-            controller: 'OfferController'
-          }
-        }
-      });
-
-      $stateProvider.state('tab.places', {
-        url: '/places',
-        views: {
-          'tab-places': {
-            templateUrl: 'templates/tab-places.html',
-            controller: 'PlacesController'
+            controller: 'IncludeController'
           }
         }
       });

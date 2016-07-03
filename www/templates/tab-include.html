@@ -1,20 +1,29 @@
 <ion-view view-title="Incluir Oferta">
   <ion-content class="padding">
+    <div id="map" data-tap-disabled="true"></div>
     <div class="list">
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Nome do produto</span>
-        <input type="text" placeholder="Nome do produto">
+      <div class="row">
+        <div class="col"></div>
+      </div>
+      <label class="item item-input item-button-right">
+        <button class="button button-outline button-royal" ng-click="modal.show()">
+          <i class="icon ion-ios-location"></i>
+        </button>
+        <input type="text" placeholder="Estabelecimento" ng-model="offer.place.name">
       </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Preço</span>
-        <input type="text" placeholder="Preço">
+      <label class="item item-input">
+        <input type="text" placeholder="Nome do produto" ng-model="offer.name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Preço" ng-model="offer.price">
       </label>
     </div>
-    <button class="button button-royal icon-right ion-camera" ng-click="takePicture()">
+    <button class="button button-block button-royal button-outline icon-right ion-camera" ng-click="takePicture()">
       Tirar Foto
     </button>
-    <button class="button button-block button-outline button-royal">
+    <button class="button button-block button-royal" ng-click="submitOffer(offer)">
       Enviar
     </button>
+    <img src="data:image/jpeg;base64,{{pictureValue}}" class="img-responsive center">
   </ion-content>
 </ion-view>

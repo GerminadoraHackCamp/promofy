@@ -9,3 +9,17 @@
     margin: auto;
     width: 50%;
 }
+
+.platform-android .bar-subheader.has-tabs-top{
+  top:93px !important;
+}
+
+.platform-android .has-subheader.has-tabs-top{
+  top:137px;
+}
+
+.optionList{
+    position:absolute;
+    width:100%;
+    z-index:100;
+}
