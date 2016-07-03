@@ -4,7 +4,7 @@
     var app = angular.module('promofy.controllers.places', []);
 
     app.controller('PlacesController', ['$scope', 'PlacesService', '$ionicLoading',
-        function ($scope, PlacesService,$ionicLoading) {
+        function ($scope, PlacesService, $ionicLoading) {
 
         $ionicLoading.show({
             content: 'Loading',
@@ -19,7 +19,6 @@
             $scope.places = results;
             $ionicLoading.hide(); 
         })
-        
 
     }]);
 }());

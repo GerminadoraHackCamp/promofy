@@ -17,7 +17,18 @@
             $cordovaCamera
         ) {
 
-        $scope.offers = OfferService.load();
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        }); 
+
+        OfferService.load().then(function(result) {
+            $scope.offers = result;
+            $ionicLoading.hide(); 
+        })
         
         function updateStatusBar() {
             if (window.StatusBar) {
