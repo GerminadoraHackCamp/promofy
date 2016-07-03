@@ -11,6 +11,9 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -27,7 +30,8 @@
     <script src="js/controllers/offer-controller.js"></script>
     <script src="js/controllers/places-controller.js"></script>
     <script src="js/services/offer-service.js"></script>
-    
+    <script src="js/services/places-service.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMuvS449d7AV6tPin8VFQTqetcnfDtT0g&libraries=places&callback=initMap" async defer></script>
   </head>
   <body ng-app="promofy">
     <ion-nav-bar class="bar-royal">
