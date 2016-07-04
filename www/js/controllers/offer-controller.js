@@ -8,50 +8,41 @@
         '$state',
         '$ionicLoading', 
         'OfferService',
-        '$cordovaCamera',
         function (
             $scope, 
             $state, 
             $ionicLoading,
-            OfferService,
-            $cordovaCamera
+            OfferService
         ) {
 
-        $scope.offers = OfferService.load();
-        
-        function updateStatusBar() {
-            if (window.StatusBar) {
-                StatusBar.overlaysWebView(true);
-                StatusBar.styleLightContent();
-            }
-        }
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        }); 
 
-        $scope.takePicture = function () {
-            updateStatusBar();
-
-            var options = { 
-                quality : 100, 
-                destinationType : Camera.DestinationType.DATA_URL, 
-                sourceType : Camera.PictureSourceType.CAMERA,
-                encodingType: Camera.EncodingType.JPEG,
-                targetWidth: 500,
-                targetHeight: 500,
-                popoverOptions: CameraPopoverOptions,
-                saveToPhotoAlbum: false
-            };
-
-            $cordovaCamera.getPicture(options).then(function(imageData) {
-                //PictureService.set(imageData);
-                //$scope.hasPictureValue = true;
-                //ScanService.reset();
-                //loadScanCode();
-                updateStatusBar();
-            }, function(error) {
-                //$scope.hasPhotoValue = false;
-                updateStatusBar();
-            });
-        };
+        OfferService.load().then(function(result) {
+            $scope.offers = result;
+            $ionicLoading.hide(); 
+        })
         
     }]);
+
+   app.filter('orderObjectBy', function() {
+     return function(items, field, reverse) {
+        var filtered = [];
+        angular.forEach(items, function(item) {
+            filtered.push(item);
+        });
+        filtered.sort(function (a, b) {
+            return (a[field] > b[field] ? 1 : -1);
+        });
+        if(reverse) 
+            filtered.reverse();
+        return filtered;
+    };
+   })
 
 }());
